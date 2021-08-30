@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Final Project HomePage | ITP 104</title>
+
+		<meta charset="UTF-8">
+	    <meta name="description" content="Henry Vu's Portfolio, An interactive webpage that contains contact information,resume, and projects of Henry Vu">
+	    <meta name="keywords" content="HTML, CSS, Henry Vu, Henry Vu's Portfolio">
+	    <meta name="author" content="Henry Vu">
+	  
+		<style>
+
+			@font-face {
+				font-family: "HAF";
+				src: url('fonts/HAF.TTF');
+
+				font-family: "Silom";
+				src: url('fonts/silom.TTF');
+
+				font-family: "BH";
+				src: url('fonts/BH.TTF');	
+
+				font-family: "CourierM";
+				src: url('fonts/CourierM.ttf');				
+			}
+
+			body {
+				margin: 0;
+			}
+
+			section {
+				 width: 100%;
+				 display: table;
+				 margin: 0;
+				 max-width: none;
+				 background-color: white;
+				 height: 100vh;
+			}
+
+			#intro {
+				height: 100vh;
+				background-color: white;
+				font-family: "HAF", sans serif;
+			}
+
+			#menu {
+				width: 100%;
+				height: 60px;
+				position: fixed;
+
+				/*background-color: rgba(64, 64, 64, 0.6);*/
+				background-color: #91760d;
+				z-index: 1;
+			}
+
+			#wrapper {
+				width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+				height: 100%;
+			}
+
+			#logo {
+				width: 40%;
+				height: 100%;
+				float: left;
+
+				text-align: center;
+				font-size: 2.5em;
+				line-height: 60px;
+			}
+
+			#about-menu {
+				width: 17%;
+				height: 100%;
+				float: left;
+
+				text-align: right;
+				font-size: 1.5em;
+				line-height: 60px;
+				padding-left: 70px;
+			}
+
+			#projects-menu {
+				width: 17%;
+				height: 100%;
+				float: left;
+
+				text-align: center;
+				font-size: 1.5em;
+				line-height: 60px;
+			}
+
+			#contact-menu {
+				width: 17%;
+				height: 100%;
+				float: left;
+
+				text-align: left;
+				font-size: 1.5em;
+				line-height: 60px;
+			}
+
+			a:link {
+			  transition: all 0.5s;
+			  text-decoration: none;
+			  color: black;
+			}
+
+			a:visited {
+			  text-decoration: none;
+			  color: black;
+			}
+
+			a:hover {
+			  transition: all 0.5s;
+			  text-decoration: none;
+			  color: lightgrey;
+			}
+
+			a:active {
+			  text-decoration: none;
+			  color: black;
+			}
+
+			#name {
+				width: 100%;
+				height: 100px;
+				margin-top: 370px;
+
+				text-align: center;
+				line-height: 100px;
+				font-size: 8em;
+
+				font-family: "Silom", sans serif;
+			}
+
+			#symbol {
+				font-size: 2em;
+				width: 100%;
+				height: 50px;
+
+				text-align: center;
+				line-height: 50px;
+
+				font-family: "CourierM", sans serif;
+			}
+
+			#job {
+				font-size: 2em;
+				width: 100%;
+				height: 50px;
+				
+				text-align: center;
+				line-height: 40px;
+
+				font-family: "CourierM", sans serif;
+			}
+
+			#arrow {
+				width: 100px;
+				height: 50px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 300px;
+
+				text-align: center;
+				line-height: 50px;
+				font-size: 4em;
+				font-family: Arial, sans serif;
+
+				transform: rotate(90deg);
+			}
+
+			#arrow p {
+				transition: all 1s;
+			}
+
+			#arrow p:hover {
+				transition: all 1s;
+				transform: scale(1.5);
+			}
+
+			#about {
+				height: 170vh;
+				background-color: #F5F5F5;
+				font-family: Arial, sans serif;
+			}
+
+			#portrait {
+				background-image: url('img/painting.jpg');
+				background-position: center;
+				background-repeat: no-repeat;
+				width: 450px;
+				height: 450px;
+				border-radius: 50%;
+			}
+
+			#portrait-wrapper {
+				width: 450px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 150px;
+			}
+
+
+			.description {
+				width: 60%;
+				height: 100px;
+				margin-left: auto;
+				margin-right: auto;
+				color: black;
+
+				text-align: center;
+				line-height: 100px;
+				font-size: 3em;
+
+				font-family: "Silom", sans serif;
+			}
+
+			#decor {
+				margin-top: 140px;
+				height: 8px;
+				width: 45px;
+				background-color: #B8860B;
+			}
+
+			#content-wrapper {
+				width: 60%;
+				margin-left: 430px;
+				/*margin-right: auto;*/
+				margin-top: 120px;
+				font-family: "CourierM", sans serif;
+			}
+
+			#content {
+				width: 60%;
+				float: left;
+				font-size: 1.3em;
+				line-height: 50px;
+			}
+
+			#content-2 {
+				width: 18%;
+				margin-left: 100px;
+				float: left;
+				font-size: 1.4em;
+				line-height: 50px;
+				text-align: center;
+			}
+
+			.content-text {
+				color: #B8860B;
+				font-size: 1.3em;
+			}
+
+			#button-contact {
+				width: 180px;
+				height: 60px;
+				margin-top: 50px;
+				margin-left: 20px;
+
+				background-color: #B8860B;
+				text-align: center;
+				line-height: 60px;
+				border-radius: 12px 12px 12px 12px;
+
+				transition: all 1s;
+
+				font-family: "Silom", sans-serif;
+			}
+
+			#button-contact a {
+				transition: all 1s;
+				color: lightgrey;
+				display: block;
+			}
+
+			#button-contact a:hover {
+				transition: all 1s;
+				color: white;
+			}
+
+			#button-contact p {
+				transition: all 1s;
+			}			
+
+			#button-contact p:hover {
+				transition: all 1s;
+				background-color: #DAA520;
+				border-radius: 12px 12px 12px 12px;
+			}
+
+
+			/*Projects CSS*/
+			#projects {
+				height: 230vh;
+				background-color: white;
+				font-family: Arial, sans serif;
+			}
+
+			#projects-img {
+				background-image: url('img/projects.jpg');
+				background-size: cover;
+				background-position: center;
+				width: 450px;
+				height: 500px;
+			}
+
+			#projects-img-wrapper {
+				width: 450px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 200px;
+			}
+
+			#projects-decor {
+				margin-top: 60px;
+				height: 8px;
+				width: 45px;
+				background-color: #B8860B;
+			}
+
+			#efynn {
+				width: 1200px;
+				height: 600px;
+				background-color: lightgrey;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 140px;
+				overflow: hidden;
+				position: relative;
+			}
+
+			#efynn-img {
+				width: 100%;
+				height: 600px;
+				background-color: grey;
+				background-image: url('img/efynn.png');
+				background-size: cover;
+				background-position: center; 
+			}
+
+			#efynn img {
+				width: 100%;
+				height: auto;
+			}
+
+			#efynn-title {
+				width: 1200px;
+				height: 70px;
+				margin-right: auto;
+				margin-left: auto;
+				margin-top: -24px;
+				background-color: #B8860B;
+
+				text-align: center;
+				font-size: 1.5em;
+				color: white;
+				line-height: 70px;
+			}
+
+			.caption {
+				position: absolute;
+
+				background-color: rgba(0, 0, 0, 0.6);
+				color: #FFF;
+
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+
+				text-align: center;
+				padding-top: 100px;
+
+				transition: all 1s;
+				opacity: 0;
+
+				/*display: none;*/
+			}
+
+			#efynn-button {
+				width: 200px;
+				height: 70px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 300px;
+				background-color: #B8860B;
+				line-height: 70px;
+				border-radius: 12px 12px 12px 12px;
+
+				font-size: 1.2em;
+				transition: all 0.5s;
+			}
+
+			#efynn:hover .caption {
+				transition: all 0.5s;
+				opacity: 1;
+				display: block;
+			}
+
+			#efynn:hover #efynn-button {
+				transform: translateY(-100px);
+			}
+
+			#efynn-button a {
+				transition: all 0.5s;
+				color: white;
+				display: block;
+
+				font-family: "Silom", sans-serif;
+			}
+
+			#efynn-button a:hover {
+				transition: all 0.5s;
+				color: lightgrey;
+			}
+
+			#efynn-button p {
+				transition: all 0.5s;
+			}
+
+			#efynn-button p:hover {
+				transition: all 0.5s;
+				background-color: #DAA520;
+				border-radius: 12px 12px 12px 12px;
+			}
+
+			#projects-wrapper {
+				width: 1200px;
+				height: 385px;
+				margin-right: auto;
+				margin-left: auto;
+				margin-top: 70px;
+			}
+
+			#astec {
+				width: 565px;
+				height: 385px;
+				background-color: lightgrey;
+				float: left;
+				overflow: hidden;
+				position: relative;
+			}
+
+			#astec img {
+				width: 100%;
+				height: auto;
+			}
+
+
+			#astec-button {
+				width: 200px;
+				height: 70px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 170px;
+				background-color: #B8860B;
+				line-height: 70px;
+				border-radius: 12px 12px 12px 12px;
+
+				font-size: 1.2em;
+				transition: all 0.5s;
+
+				font-family: "Silom", sans-serif;
+			}
+
+			#astec:hover .caption {
+				transition: all 0.5s;
+				opacity: 1;
+				display: block;
+			}
+
+			#astec:hover #astec-button {
+				transition: all 0.5s;
+				transform: translateY(-100px);
+			}
+
+			#astec-button a {
+				transition: all 0.5s;
+				color: white;
+				display: block;
+			}
+
+			#astec-button a:hover {
+				transition: all 0.5s;
+				color: lightgrey;
+			}
+
+			#astec-button p {
+				transition: all 0.5s;
+			}
+
+			#astec-button p:hover {
+				transition: all 0.5s;
+				background-color: #DAA520;
+				border-radius: 12px 12px 12px 12px;
+			}
+
+			#studio-770 {
+				width: 565px;
+				height: 385px;
+				background-color: lightgrey;
+				float: left;
+				margin-left: 70px;
+				overflow: hidden;
+				position: relative;
+			}
+
+			#studio-770 img {
+				width: 100%;
+				height: auto;
+			}
+
+			#studio-button {
+				width: 200px;
+				height: 70px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 170px;
+				background-color: #B8860B;
+				line-height: 70px;
+				border-radius: 12px 12px 12px 12px;
+
+				font-size: 1.2em;
+				transition: all 0.5s;
+
+				font-family: "Silom", sans-serif;
+			}
+
+			#studio-770:hover .caption {
+				transition: all 0.5s;
+				opacity: 1;
+				display: block;
+			}
+
+			#studio-770:hover #studio-button {
+				transition: all 0.5s;
+				transform: translateY(-100px);
+			}
+
+			#studio-button a {
+				transition: all 0.5s;
+				color: white;
+				display: block;
+			}
+
+			#studio-button a:hover {
+				transition: all 0.5s;
+				color: lightgrey;
+			}
+
+			#studio-button p {
+				transition: all 0.5s;
+			}
+
+			#studio-button p:hover {
+				transition: all 0.5s;
+				background-color: #DAA520;
+				border-radius: 12px 12px 12px 12px;
+			}
+
+			#title-wrapper {
+				width: 1200px;
+				height: 70px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 10px;
+			}
+
+			#astec-title {
+				width: 565px;
+				height: 70px;
+				float: left;
+				margin-top: -14px;
+				background-color: #B8860B;
+
+				text-align: center;
+				font-size: 1.5em;
+				color: white;
+			}
+
+			#studio-title {
+				width: 565px;
+				height: 70px;
+				float: left;
+				margin-top: -14px;
+				margin-left: 70px;
+				background-color: #B8860B;
+
+				text-align: center;
+				font-size: 1.5em;
+				color: white;
+			}
+
+			/*Contact Section*/
+			#contact {
+				height: 240vh;
+				background-color: #F5F5F5;
+				font-family: Arial, sans serif;
+			}
+
+			#contact-img {
+				background-image: url('img/phone.png');
+				/*background-color: grey;*/
+				background-size: cover;
+				background-position: center;
+				width: 450px;
+				height: 450px;
+				border-radius: 50%;
+			}
+
+			#contact-img-wrapper {
+				width: 450px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 180px;
+			}
+
+			#contact-decor {
+				margin-top: 60px;
+				height: 8px;
+				width: 45px;
+				background-color: #B8860B;
+			}
+
+			#contact-title {
+				width: 60%;
+				height: 100px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 100px;
+				color: black;
+
+				text-align: center;
+				line-height: 100px;
+				font-size: 4em;
+
+				font-family: "Silom", sans serif;
+			}
+
+			#contact-name {
+				width: 60%;
+				height: 50px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 180px;
+				color: black;
+
+				text-align: center;
+				line-height: 15px;
+				font-size: 4em;
+
+				font-family: "Silom", sans serif;
+			}
+
+			#contact-email {
+				width: 60%;
+				height: 40px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 10px;
+				color: #B8860B;
+
+				text-align: center;
+				font-size: 1.7em;
+
+				font-family: "Silom", sans serif;
+			}
+
+			#contact-email a {
+				color: #B8860B;
+			}
+
+			#contact-email a:hover {
+				color: #DAA520;
+			}
+
+			#contact-phone {
+				width: 60%;
+				height: 50px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 10px;
+				color: black;
+
+				text-align: center;
+				font-size: 1.3em;
+
+				font-family: "Silom", sans serif;
+			}
+
+			#contact-media-wrapper {
+				width: 1000px;
+				height: 500px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 80px;
+				/*background-color: grey;*/
+			}
+
+			#linkedin {
+				width: 465px;
+				height: 80px;
+				margin-top: 50px;
+				float: left;
+				font-size: 1.2em;
+				/*background-color: lightgrey;*/
+
+				font-family: "Silom", sans serif;
+			}
+
+			#linkedin a {
+				color: #B8860B;
+			}
+
+			#linkedin a:hover {
+				color: #DAA520;
+			}	
+
+			#linkedin-hr {
+				width: 100%;
+				height: 1px;
+				background-color: grey;
+			}
+
+			#facebook {
+				width: 465px;
+				height: 80px;
+				margin-left: 70px;
+				margin-top: 50px;
+				float: left;
+				font-size: 1.2em;
+				/*background-color: lightgrey;*/
+
+				font-family: "Silom", sans serif;
+			}
+
+			#facebook a {
+				color: #B8860B;
+			}
+
+			#facebook a:hover {
+				color: #DAA520;
+			}	
+
+			#facebook-hr {
+				width: 100%;
+				height: 1px;
+				background-color: grey;
+			}
+
+			#resume {
+				font-size: 1.5em;
+				text-align: center;
+				/*background-color: lightgrey;*/
+
+				font-family: "Silom", sans serif;
+			}
+
+			#resume-hr {
+				width: 60%;
+				height: 2px;
+				margin-bottom: 30px;
+				background-color: grey;
+			}
+
+			iframe {
+				width: 100%;
+				height: 800px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+		</style>
+	</head>
+	<body>
+		<section id="intro">
+
+			<div id="menu">
+				<div id="wrapper">
+					<div id="logo">
+						<a href="homepage.html#intro">H V</a>
+					</div>
+
+					<div id="about-menu">
+						<a href="homepage.html#about">ABOUT</a>
+					</div>
+
+					<div id="projects-menu">
+						<a href="homepage.html#projects">PROJECTS</a>
+					</div>
+
+					<div id="contact-menu">
+						<a href="homepage.html#contact">CONTACT</a>
+					</div>
+				</div> <!-- wrapper -->
+			</div> <!-- menu -->
+
+			<div id="name">
+				<p>HENRY VU</p>
+			</div>
+
+			<div id="symbol">
+				<p>&lt;/&gt;</p>
+			</div>
+
+			<div id="job">
+				<p>Front-end Developer</p>
+			</div>
+
+			<div id="arrow">
+				<p><a href="homepage.html#about">&gt;</a></p>
+			</div>
+
+		</section> <!-- intro -->
+
+
+		<section id="about">
+
+			<div id="portrait-wrapper">
+				<div id="portrait"></div>
+			</div> <!-- portrait-wrapper -->
+
+			<div class="description">
+				<p>HI THERE, I'M HENRY - A GAME DESIGNER WHO LOVES CODE</p>
+			</div>
+			<hr id="decor">
+
+			<div id=content-wrapper>
+				<div id="content">
+					<p><span class="content-text">About Me</span></p>
+					<p>I am a first year student at USC majoring in Computer Science/Games with a minor in Mobile App Developing and specialization in Web Publishing.</p>
+					<p>A few of my strengths are object-oriented programming, UI/UX Design, front-end development, and game design.</p>
+					<p>Should you need any further information, please do not hesitate to contact me in the contact section below.</p>
+				</div> <!-- content -->
+
+				<div id="content-2">
+					<p><span class="content-text">Skills</span></p>
+					
+					<ul>
+						<li><p>Web UI & UX</p></li>
+						<li><p>HTML & CSS</p></li>
+						<li><p>C++ & Java</p></li>
+						<li><p>Game Design</p></li>
+					</ul>
+					
+					<div id="button-contact"><p><a href="homepage.html#contact">Contact</a></p></div>
+				</div> <!-- content-2 -->
+			</div> <!-- content-wrapper -->
+
+		</section> <!-- about -->
+
+
+		<section id="projects">
+
+			<div id="projects-img-wrapper">
+				<div id="projects-img"></div>
+			</div> <!-- projects-img-wrapper -->
+
+			<div class="description">
+				<p>PROJECTS</p>
+			</div> <!-- description -->
+			<hr id="projects-decor">
+
+			<div id="efynn">
+				<div id="efynn-img">
+					<img src="img/efynn.png" alt="Efynn">
+
+					<div class="caption">
+						<div id="efynn-button"><p><a href="https://efynn.com/" target="_blank">View Project</a></p></div>
+					</div>
+				</div>
+			</div> <!-- efynn -->
+
+			<div id="efynn-title"><p>EFYNN</p></div>
+
+
+			<div id="projects-wrapper">
+
+				<div id="astec">
+					<div id="astec-img">
+						<img src="img/astec.png" alt="Astec">
+
+						<div class="caption">
+							<div id="astec-button"><p><a href="http://astec.vn/trang-chu/" target="_blank">View Project</a></p></div>
+						</div>
+					</div>
+				</div> <!-- astec -->
+
+				<div id="studio-770">
+					<div id="studio-770-img">
+						<img src="img/studio.png" alt="Studio 770">
+
+						<div class="caption">
+							<div id="studio-button"><p><a href="https://www.studio770.com/" target="_blank">View Project</a></p></div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- projects-wrapper -->
+
+			<div id="title-wrapper">
+				<div id="astec-title"><p>ASTEC</p></div>
+				<div id="studio-title"><p>STUDIO 770</p></div>
+			</div>
+
+		</section> <!-- projects -->
+
+
+		<!-- Contact Section -->
+		<section id="contact">
+
+			<div id="contact-img-wrapper">
+				<div id="contact-img"></div>
+			</div> <!-- projects-img-wrapper -->
+
+			<div id="contact-title">
+				<p>LET'S GET IN TOUCH</p>
+			</div> <!-- description -->
+			<hr id="contact-decor">
+
+			<div id="contact-name">
+				<p> HENRY VU</p>
+			</div>
+
+			<div id="contact-email">
+				<a href="mailto:hqvu@usc.edu">hqvu@usc.edu</a>
+			</div>  
+
+			<div id="contact-phone">
+				<p>+1 949 502 1777</p>
+			</div>
+
+			<div id="contact-media-wrapper">
+
+				<div id=resume>
+					<p>RESUME</p>
+					<hr id=resume-hr>
+					<iframe src="media/resume.pdf" name="my-frame"></iframe>
+				</div>
+
+				<div id=linkedin>
+					<p>LINKEDIN</p>
+					<hr id=linkedin-hr>
+					<a href="https://www.linkedin.com/in/henry-vu-15266b1b4/" target="_blank">linkedin.com/in/henryvu</a>
+				</div>
+
+				<div id=facebook>
+					<p>FACEBOOK</p>
+					<hr id=facebook-hr>
+					<a href="https://www.facebook.com/henry.quang.3323/" target="_blank">facebook.com/henryvu</a>
+				</div>
+
+			</div> <!-- contact-media-wrapper -->
+
+		</section> <!-- contact -->
+
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script src="smoothScroll/jquery.smooth-scroll.min.js"></script>
+
+		<script>
+		  $("#logo").on("click", function () {
+	        $.smoothScroll({ scrollTarget: "#intro", speed: 2000 });
+	      });
+
+	      $("#about-menu").on("click", function () {
+	        $.smoothScroll({ scrollTarget: "#about", speed: 2000 });
+	      });
+
+	      $("#projects-menu").on("click", function () {
+	        $.smoothScroll({ scrollTarget: "#projects", speed: 2000 });
+	      });
+
+	      $("#contact-menu").on("click", function () {
+	        $.smoothScroll({ scrollTarget: "#contact", speed: 2000 });
+	      });
+
+	      $("#arrow").on("click", function () {
+	        $.smoothScroll({ scrollTarget: "#about", speed: 2000 });
+	      });
+
+	      $("#button-contact").on("click", function () {
+	        $.smoothScroll({ scrollTarget: "#contact", speed: 2000 });
+	      });
+    </script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
